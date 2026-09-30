@@ -17,21 +17,31 @@
 
 interface Customer {
   giveDiscount(): number;
+  addLoyaltyPoints(amountSpents: number):number
 
 }
 
 
 class RegualrCustomer implements Customer {
+  addLoyaltyPoints(amountSpents: number): number {
+    return amountSpents
+  }
   giveDiscount(): number {
     return 10;
   }
 }
 class PremiumCustomer implements Customer {
+  addLoyaltyPoints(amountSpents: number): number {
+    return amountSpents * 2;
+  }
   giveDiscount(): number {
     return 20;
   }
 }
 class GoldCustomer implements Customer {
+  addLoyaltyPoints(amountSpents: number): number {
+    return amountSpents * 3;
+  }
   giveDiscount(): number {
     return 30;
   }
@@ -47,5 +57,8 @@ class Discount {
 
 
 let premiumCustomer: PremiumCustomer = new PremiumCustomer();
+let goldCustomer: GoldCustomer = new GoldCustomer();
 let discount: Discount = new Discount();
 discount.giveDiscount(premiumCustomer)
+discount.giveDiscount(goldCustomer)
+
