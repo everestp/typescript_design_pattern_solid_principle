@@ -50,3 +50,7 @@ user.execute("john")
 
 let post: HighLevelModule = new HighLevelModule(mongo)
 post.execute("this is the post")
+
+
+let post1: HighLevelModule = new HighLevelModule(mongo)
+post1.execute("This data is set")
